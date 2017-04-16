@@ -34,9 +34,11 @@ export class BVideo extends Component {
     }
 
     zoomHandle = () => {
+        console.log({el: this.refs.link,
+            src: this.props.src})
         BigPicture({
             el: this.refs.link,
-            ytSrc: this.props.src
+            vidSrc: this.props.src
         });
     }
 
