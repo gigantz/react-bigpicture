@@ -36,4 +36,3 @@ render(
 ![horizontal with codes](https://camo.githubusercontent.com/d58922db18736731a116bc06b445cd203d1e7ad5/687474703a2f2f692e696d6775722e636f6d2f375436646e4e332e676966)
 
 BigPicture by @henrygd https://github.com/henrygd/bigpicture
-Lightweight JavaScript image / video viewer. Supports Youtube and Vimeo
