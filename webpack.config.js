@@ -5,12 +5,16 @@ const path = require('path');
 module.exports = {
     entry: './example.js',
     output: {
-        filename: './app.js'
+        filename: './exampleDist.js'
     },
     module: {
         loaders: [
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
         ]
+    },
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
     },
     devServer: {
         "port": 7979,
@@ -23,6 +27,5 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new UglifyJSPlugin()
     ]
 };
