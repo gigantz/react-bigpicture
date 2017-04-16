@@ -28,6 +28,32 @@ BPicture.propTypes = {
     caption: PropTypes.string
 };
 
+export class BVideo extends Component {
+    constructor(props){
+        super(props);
+    }
+
+    zoomHandle = () => {
+        BigPicture({
+            el: this.refs.link,
+            ytSrc: this.props.src
+        });
+    }
+
+    render(){
+        return (
+            <div className="bigpicture link video" onClick={this.zoomHandle} ref="link" title={this.props.caption} style={{ display: 'inline-block' }}>
+                {this.props.children}
+            </div>
+        )
+    }
+}
+
+BVideo.propTypes = {
+    src: PropTypes.string.isRequired,
+    caption: PropTypes.string
+};
+
 export class BYoutube extends Component {
     constructor(props){
         super(props);
