@@ -1,5 +1,5 @@
 {
-  "name": "react-parse-in",
+  "name": "react-bigpicture",
   "version": "1.0.0",
   "description": "Parse html in your React App from any URL",
   "main": "index.js",
@@ -8,11 +8,14 @@
     "start": "webpack-dev-server --inline --hot --open"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "example.js",
+    "example.hmtl",
+    "README.md"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gigantz/react-parse-in.git"
+    "url": "git+https://github.com/gigantz/react-bigpicture.git"
   },
   "keywords": [
     "parser",
@@ -21,9 +24,9 @@
   "author": "Orkhan Jafarov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gigantz/react-parse-in/issues"
+    "url": "https://github.com/gigantz/react-bigpicture/issues"
   },
-  "homepage": "https://github.com/gigantz/react-parse-in#readme",
+  "homepage": "https://github.com/gigantz/react-bigpicture#readme",
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^15.5.4",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BPicture, BVideo, BYoutube, BVimeo } from './app';
+import { BPicture, BVideo, BYoutube, BVimeo } from './component';
 
 render(
     <div>

@@ -3,9 +3,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './example.js',
+    entry: './component.js',
     output: {
-        filename: './exampleDist.js'
+        filename: './index.js'
     },
     module: {
         loaders: [
@@ -27,5 +27,6 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
+
     ]
 };
