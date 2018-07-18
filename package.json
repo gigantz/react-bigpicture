@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/gigantz/react-bigpicture#readme",
   "dependencies": {
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.8"
+  },
+  "peerDependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
