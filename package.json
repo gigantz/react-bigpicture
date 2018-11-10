@@ -1,6 +1,6 @@
 {
   "name": "react-bigpicture",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Parse html in your React App from any URL",
   "main": "index.js",
   "scripts": {

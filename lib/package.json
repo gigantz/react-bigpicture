@@ -2,7 +2,7 @@
   "name": "react-bigpicture",
   "version": "1.0.14",
   "description": "Parse html in your React App from any URL",
-  "main": "/dist/bundle.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --inline --hot --open",
