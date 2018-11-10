@@ -1,32 +1,27 @@
-const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    entry: './component.js',
-    output: {
-        filename: './index.js'
-    },
-    module: {
-        loaders: [
-            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
-        ]
-    },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
-    devServer: {
-        "port": 7979,
-        hot: true,
-    },
-    watch: true,
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env':{
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
-
-    ]
+  devtool: 'source-map',
+  entry: './src/index',
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+  ],
+  module: {
+    rules: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      include: path.join(__dirname, 'src')
+    }]
+  }
 };
