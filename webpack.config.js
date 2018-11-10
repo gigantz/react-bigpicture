@@ -5,9 +5,11 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
   entry: './src/index',
+  target: 'web',
   output: {
+    path: path.join(__dirname, '/lib'),
     filename: 'index.js',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   plugins: [
     new webpack.DefinePlugin({
