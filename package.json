@@ -8,11 +8,6 @@
     "start": "webpack-dev-server --inline --hot --open",
     "build": "webpack --config webpack.config.js --optimize-minimize --mode production"
   },
-  "files": [
-    "dist/bundle.js",
-    "package.json",
-    "README.md"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gigantz/react-bigpicture.git"

@@ -6,8 +6,7 @@ module.exports = {
   devtool: 'source-map',
   entry: './src/index',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'index.js',
   },
   plugins: [
     new webpack.DefinePlugin({
