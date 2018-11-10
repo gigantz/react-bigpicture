@@ -10,7 +10,7 @@ OR
 yarn add react-bigpicture
 ```
 
-[Demo] - CodeSandbox (https://codesandbox.io/s/m57mw5v7vp)
+Demo (https://codesandbox.io/s/m57mw5v7vp)
 
 ```javascript
 import React from 'react';
