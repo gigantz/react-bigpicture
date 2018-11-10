@@ -1,5 +1,7 @@
 # react-bigpicture
 React Lightbox Component based on BigPicture.js / Video and Image
+<a href="https://codesandbox.io/s/m57mw5v7vp">Demo - CodeSandbox</a>
+
 
 ```
 npm install react-bigpicture --save
@@ -9,8 +11,6 @@ OR
 ```
 yarn add react-bigpicture
 ```
-
-Demo (https://codesandbox.io/s/m57mw5v7vp)
 
 ```javascript
 import React from 'react';
