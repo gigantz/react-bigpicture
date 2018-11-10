@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import BigPicture from './index.js';
+import BigPicture from './bigpicture.js';
 
 class BigPictureWrapper extends React.Component {
   static defaultProps = {
