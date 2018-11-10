@@ -7,6 +7,7 @@ module.exports = {
   entry: './src/index',
   output: {
     filename: 'index.js',
+    libraryTarget: 'umd'
   },
   plugins: [
     new webpack.DefinePlugin({
