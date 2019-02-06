@@ -11,7 +11,6 @@ module.exports = {
 		filename: 'index.js',
 		libraryTarget: 'commonjs2'
   },
-  externals: Object.keys(require('./package.json').dependencies),
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {

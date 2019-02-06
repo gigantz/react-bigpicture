@@ -29,7 +29,8 @@ class BigPictureWrapper extends React.Component {
 				options.ytSrc = this.props.src.split('=')[1];
 				break;
 			case 'vimeo':
-				options.vimeoSrc = vimeoID[vimeoID.length - 1];
+				const pathComponents = this.props.src.split('/')
+				options.vimeoSrc = pathComponents[pathComponents.length - 1];
 				break;
 			default:
 				options.imgSrc = this.props.src;
