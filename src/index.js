@@ -40,13 +40,15 @@ class BigPictureWrapper extends React.Component {
 	};
 
 	render() {
+		const { caption, type, src, ...props } = this.props
+
 		return (
 			<div
-				className="bigpicture link picture"
+				className="bigpicture"
 				onClick={this.zoomHandle}
 				ref={this.el}
-				title={this.props.caption}
-				style={{ display: 'inline-block' }}
+				title={caption}
+				{...props}
 			>
 				{this.props.children}
 			</div>
