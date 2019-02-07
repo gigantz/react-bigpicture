@@ -1,6 +1,6 @@
 {
 	"name": "react-bigpicture",
-	"version": "1.0.18",
+	"version": "1.0.19",
 	"description": "Parse html in your React App from any URL",
 	"main": "index.js",
 	"scripts": {
@@ -14,7 +14,10 @@
 		"type": "git",
 		"url": "git+https://github.com/gigantz/react-bigpicture.git"
 	},
-	"keywords": [ "parser", "react" ],
+	"keywords": [
+		"parser",
+		"react"
+	],
 	"author": "Orkhan Jafarov",
 	"bugs": {
 		"url": "https://github.com/gigantz/react-bigpicture/issues"
