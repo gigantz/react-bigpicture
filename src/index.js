@@ -4,7 +4,7 @@ import BigPicture from './bigpicture.js';
 
 class BigPictureWrapper extends React.Component {
 	static defaultProps = {
-		type: 'image'
+		type: 'image',
 	};
 
 	constructor(props) {
@@ -13,26 +13,26 @@ class BigPictureWrapper extends React.Component {
 	}
 
 	zoomHandle = () => {
-		const { type } = this.props;
+		const { type, src } = this.props;
 		let options = {
-			el: this.el.current
+			el: this.el.current,
 		};
 
 		switch (type) {
 			case 'image':
-				options.imgSrc = this.props.src;
+				options.imgSrc = src;
 				break;
 			case 'video':
-				options.vidSrc = this.props.src;
+				options.vidSrc = src;
 				break;
 			case 'youtube':
-				options.ytSrc = this.props.src.split('=')[1];
+				options.ytSrc = src.split('=')[1];
 				break;
 			case 'vimeo':
-				options.vimeoSrc = vimeoID[vimeoID.length - 1];
+				options.vimeoSrc = src.replace(/https\:\/\/vimeo\.com\//, '');
 				break;
 			default:
-				options.imgSrc = this.props.src;
+				options.imgSrc = src;
 				break;
 		}
 
@@ -40,15 +40,27 @@ class BigPictureWrapper extends React.Component {
 	};
 
 	render() {
+		const {
+			caption,
+			children,
+			className,
+			style,
+			onClick,
+			...rest
+		} = this.props;
 		return (
 			<div
-				className="bigpicture link picture"
-				onClick={this.zoomHandle}
+				className={`bigpicture link picture ${className || ''}`}
+				onClick={() => {
+					if (onClick) onClick();
+					this.zoomHandle();
+				}}
 				ref={this.el}
-				title={this.props.caption}
-				style={{ display: 'inline-block' }}
+				title={caption || ''}
+				style={{ display: 'inline-block', ...style }}
+				{...rest}
 			>
-				{this.props.children}
+				{children}
 			</div>
 		);
 	}
@@ -57,7 +69,10 @@ class BigPictureWrapper extends React.Component {
 BigPictureWrapper.propTypes = {
 	src: PropTypes.string.isRequired,
 	caption: PropTypes.string,
-	type: PropTypes.string.isRequired
+	type: PropTypes.oneOf([ 'image', 'video', 'youtube', 'vimeo' ]).isRequired,
+	onClick: PropTypes.func,
+	style: PropTypes.object,
+	className: PropTypes.string,
 };
 
 export default BigPictureWrapper;
