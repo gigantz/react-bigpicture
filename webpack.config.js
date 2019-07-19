@@ -5,21 +5,32 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-	devtool: isProd ? 'none' : 'source-map',
-	entry: './src/index',
+	mode: process.env === 'production' ? 'production' : 'development',
+	devtool: isProd ? false : 'source-map',
+	entry: {
+		index: './src/index',
+		BigPictureWrapper: './src/BigPictureWrapper',
+		BigPictureGallery: './src/BigPictureGallery',
+	},
 	target: 'web',
 	output: {
 		path: path.join(__dirname, '/lib'),
-		filename: 'index.js',
+		filename: '[name].js',
 		libraryTarget: 'commonjs2',
 	},
-	externals: Object.keys(require('./package.json').dependencies),
+	devServer: {
+    publicPath: "/",
+    contentBase: "./public",
+    hot: true,
+		inline: true,
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: isProd,
 			},
 		}),
+		new webpack.HotModuleReplacementPlugin(),
 	],
 	module: {
 		rules: [

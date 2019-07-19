@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "webpack-dev-server --inline --hot --open",
+		"start": "webpack-dev-server",
 		"build": "NODE_ENV=production webpack --config webpack.config.js --optimize-minimize --mode production",
 		"npm:patch": "npm version patch && cp ./package.json ./lib/package.json",
 		"npm:publish": "cd ./lib && npm publish"
@@ -24,10 +24,10 @@
 	},
 	"homepage": "https://github.com/gigantz/react-bigpicture#readme",
 	"dependencies": {
-		"build": "^0.1.4",
+		"bigpicture": "^2.1.3",
 		"prop-types": "^15.5.8",
-		"react": "^16.6.1",
-		"react-dom": "^16.6.1"
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6"
 	},
 	"devDependencies": {
 		"babel": "^6.23.0",
