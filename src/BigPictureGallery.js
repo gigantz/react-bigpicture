@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import BigPicture from 'bigpicture';
+import BigPicture from "bigpicture";
 
 const BigPictureGallery = ({
   children,
@@ -11,23 +11,23 @@ const BigPictureGallery = ({
   animationEnd,
   onClose,
   onChangeImage,
-  noLoader,
+  noLoader
 }) => {
   if (!children) return null;
 
-  const zoomHandle = (el) => {
+  const zoomHandle = el => {
     let options = {};
 
-    if (typeof animationStart === 'function') {
+    if (typeof animationStart === "function") {
       options.animationStart = animationStart;
     }
-    if (typeof animationEnd === 'function') {
+    if (typeof animationEnd === "function") {
       options.animationEnd = animationEnd;
     }
-    if (typeof onClose === 'function') {
+    if (typeof onClose === "function") {
       options.onClose = onClose;
     }
-    if (typeof onChangeImage === 'function') {
+    if (typeof onChangeImage === "function") {
       options.onChangeImage = onChangeImage;
     }
     if (noLoader) {
@@ -37,12 +37,9 @@ const BigPictureGallery = ({
     if (el) {
       BigPicture({
         el,
-        gallery:
-          el &&
-          el.parentNode &&
-          el.parentNode.children,
+        gallery: el && el.parentNode && el.parentNode.children,
         loop,
-        ...options,
+        ...options
       });
       return;
     }
@@ -50,24 +47,26 @@ const BigPictureGallery = ({
 
   return (
     <React.Fragment>
-      {React.Children.map(children, (child) => {
+      {React.Children.map(children, child => {
         let _childRef;
         return React.cloneElement(child, {
           ...child.props,
           ref: node => {
             _childRef = node;
             const { ref } = child;
-            if (typeof ref === 'function') ref(node);
+            if (typeof ref === "function") ref(node);
             else if (ref) ref.current = node;
           },
           onClick: e => {
             zoomHandle(_childRef);
-            if (typeof child.props.onClick === 'function') {
+            if (typeof child.props.onClick === "function") {
               child.props.onClick(e);
             }
           },
-          'data-bp': child.props.zoomedSrc ? child.props.zoomedSrc : child.props.src,
-          'data-caption': child.props.caption ? child.props.caption : '',
+          "data-bp": child.props.zoomedSrc
+            ? child.props.zoomedSrc
+            : child.props.src,
+          "data-caption": child.props.caption ? child.props.caption : ""
         });
       })}
     </React.Fragment>
@@ -81,7 +80,7 @@ BigPictureGallery.propTypes = {
   onClose: PropTypes.func,
   onError: PropTypes.func,
   onChangeImage: PropTypes.func,
-  noLoader: PropTypes.boolean,
+  noLoader: PropTypes.boolean
 };
 
 export default BigPictureGallery;

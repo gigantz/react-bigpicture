@@ -49,20 +49,20 @@ const BigPictureWrapper = ({
         break;
     }
 
-    if (typeof onError === 'function') {
+    if (typeof onError === "function") {
       options.onError = onError;
     }
 
-    if (typeof animationStart === 'function') {
+    if (typeof animationStart === "function") {
       options.animationStart = animationStart;
     }
-    if (typeof animationEnd === 'function') {
+    if (typeof animationEnd === "function") {
       options.animationEnd = animationEnd;
     }
-    if (typeof onClose === 'function') {
+    if (typeof onClose === "function") {
       options.onClose = onClose;
     }
-    if (typeof onChangeImage === 'function') {
+    if (typeof onChangeImage === "function") {
       options.onChangeImage = onChangeImage;
     }
     if (noLoader) {
@@ -92,7 +92,14 @@ const BigPictureWrapper = ({
 BigPictureWrapper.propTypes = {
   src: PropTypes.string.isRequired,
   caption: PropTypes.string,
-  type: PropTypes.oneOf(["image", "video", "youtube", "vimeo", "iframe", "audio"]).isRequired,
+  type: PropTypes.oneOf([
+    "image",
+    "video",
+    "youtube",
+    "vimeo",
+    "iframe",
+    "audio"
+  ]).isRequired,
   onClick: PropTypes.func,
   style: PropTypes.object,
   className: PropTypes.string,
@@ -101,7 +108,7 @@ BigPictureWrapper.propTypes = {
   onClose: PropTypes.func,
   onError: PropTypes.func,
   onChangeImage: PropTypes.func,
-  noLoader: PropTypes.boolean,
+  noLoader: PropTypes.boolean
 };
 
 export default BigPictureWrapper;
