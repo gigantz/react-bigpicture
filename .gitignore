@@ -2,3 +2,4 @@
 .idea/
 dist
 package-lock.json
+lib
