@@ -12,6 +12,36 @@ OR
 yarn add react-bigpicture
 ```
 
+### Props
+```javascript
+<BigPicture
+  src={'http://lorempixel.com/800/600/sports/1'}
+  caption="Sport picture"
+  type="image" // "video", "youtube", "vimeo", "iframe", "audio"
+  noLoader
+>
+    <img src="http://lorempixel.com/400/200/sports/1" />
+</BigPicture>
+```
+### Use Callbacks
+```javascript
+<BigPicture
+  src={'http://lorempixel.com/800/600/sports/1'}
+  caption="Sport picture"
+  type="image" // "video", "youtube", "vimeo", "iframe", "audio"
+  noLoader
+  animationStart={callbackFn}
+  animationEnd={callbackFn}
+  onClose={callbackFn}
+  onError={callbackFn}
+  onChangeImage={callbackFn}
+>
+    <img src="http://lorempixel.com/400/200/sports/1" />
+</BigPicture>
+```
+
+
+## Example
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';

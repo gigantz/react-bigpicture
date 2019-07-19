@@ -35,6 +35,12 @@ const BigPictureWrapper = ({
       case "youtube":
         options.ytSrc = src.split("=")[1];
         break;
+      case "iframe":
+        options.iframeSrc = src;
+        break;
+      case "audio":
+        options.audio = src;
+        break;
       case "vimeo":
         options.vimeoSrc = src.replace(/https\:\/\/vimeo\.com\//, "");
         break;
@@ -86,7 +92,7 @@ const BigPictureWrapper = ({
 BigPictureWrapper.propTypes = {
   src: PropTypes.string.isRequired,
   caption: PropTypes.string,
-  type: PropTypes.oneOf(["image", "video", "youtube", "vimeo"]).isRequired,
+  type: PropTypes.oneOf(["image", "video", "youtube", "vimeo", "iframe", "audio"]).isRequired,
   onClick: PropTypes.func,
   style: PropTypes.object,
   className: PropTypes.string,
